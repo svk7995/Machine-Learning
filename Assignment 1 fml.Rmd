@@ -1,0 +1,58 @@
+---
+title: "ASSIGNMENT 1 FML"
+author: "VAMSHIKRISHNA SUNNAM"
+date: "2023-01-29"
+output:
+  pdf_document: default
+  word_document: default
+---
+
+
+
+```{R}
+vamshidataset <-read.csv("C:/Users//vamsh//OneDrive//Documents//KENT SEM 01//FML//Assignment 01 FML//movies.csv")
+#Following is the dataset that has been imported. The dataset represents imdb top 100 movies.
+
+```
+
+```{r}
+View(vamshidataset)
+#The data has been taken from #https://www.kaggle.com/datasets/themrityunjaypathak/imdb-top-100-movies
+```
+
+```{r}
+mean(vamshidataset$imdb_rating)
+```
+
+
+```{r}
+sd(vamshidataset$imdb_rating)
+```
+
+#The above values represent descriptive statistics for a selection of quantitative  variables. The above values show the mean and the standard deviation for the quantitative variable Latitude.
+```{r}
+table(vamshidataset$movie_name)
+str(vamshidataset$category)
+#The above values represent categorical descriptive analysis of the variables. 
+```
+
+```{r}
+vamshidataset_transformed <- (vamshidataset$imdb_rating - mean(vamshidataset$imdb_rating)/sd(vamshidataset$imdb_rating))
+vamshidataset_transformed
+#Transformation of variables has been done above.
+```
+
+```{r}
+hist(vamshidataset$imdb_rating)
+#The above graphical representation is a histogram.  The selected variable is the Elevation.
+```
+
+```{r}
+x <- vamshidataset$imdb_rating
+y <- vamshidataset$imdb_rating
+plot(x,y, main = "imdb_rating and votes ", xlab = "imdb_rating", ylab = "votes")
+#The above graphical representation is a scatterplot. 
+#The selected variables are imdb_rating and votes
+```
+
+
